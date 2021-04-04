@@ -28,6 +28,15 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text>Go to image screen</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={(e) => {
+          navigation.navigate("CounterScreen");
+        }}
+      >
+        <Text>Go to counter</Text>
+      </TouchableOpacity>
     </View>
   );
 };
