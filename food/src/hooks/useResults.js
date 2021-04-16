@@ -13,7 +13,7 @@ export default () => {
     try {
       const res = await yelp.get("/search", {
         params: {
-          limit: 50,
+          limit: 20,
           term,
           location: "san jose",
         },

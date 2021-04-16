@@ -21,12 +21,14 @@ export default function SearchBar({ term, onTermChange, onTermSubmit }) {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: "#F0EEEE",
+    borderColor: "#A9A9A9",
+    borderWidth: 1,
     height: 50,
     borderRadius: 5,
     marginHorizontal: 15,
     flexDirection: "row",
     marginTop: 5,
+    marginBottom: 20,
   },
   inptuStyle: {
     flex: 1,
