@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import ResultDetail from "./ResultDetail";
 
-const ResultsList = ({ title, results }) => {
+const ResultsList = ({ title, results, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -14,7 +14,15 @@ const ResultsList = ({ title, results }) => {
         keyExtractor={(result) => result.id}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
-          return <ResultDetail {...item}></ResultDetail>;
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("ResultsShowScreen", { id: item.id });
+              }}
+            >
+              <ResultDetail navigation={navigation} {...item}></ResultDetail>
+            </TouchableOpacity>
+          );
         }}
       ></FlatList>
       {results.length === 0 && (
