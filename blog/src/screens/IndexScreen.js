@@ -8,17 +8,17 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import BlogContext from "../context/BlogContext";
+import { Context } from "../context/BlogContext";
 
 const IndexScreen = (props) => {
-  const { blogPosts, addBlogPost } = useContext(BlogContext);
+  const { state, addBlogPost } = useContext(Context);
   useEffect(() => {
-    addBlogPost({ title: "From useEffect" });
+    addBlogPost();
   }, []);
   return (
     <View>
       <FlatList
-        data={blogPosts}
+        data={state}
         keyExtractor={(item, index) => {
           return index.toString();
         }}
@@ -28,7 +28,7 @@ const IndexScreen = (props) => {
       />
       <TouchableOpacity
         onPress={() => {
-          addBlogPost({ title: "From touchableOpacity" });
+          addBlogPost();
         }}
         style={{ backgroundColor: "blue", alignItems: "center", padding: 5 }}
       >
