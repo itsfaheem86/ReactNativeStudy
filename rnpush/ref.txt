@@ -1,0 +1,4 @@
+# React Native Firebase
+# https://rnfirebase.io/
+# As your application starts to grow with more native dependencies, your builds may start to fail with the common Execution failed for task ':app:mergeDexDebug' error.
+# https://rnfirebase.io/enabling-multidex
