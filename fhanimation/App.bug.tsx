@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
-  Animated,
-  ColorValue,
   Dimensions,
-  Easing,
   SafeAreaView,
-  StyleProp,
   StyleSheet,
   TouchableOpacity,
   View,
-  ViewStyle,
 } from 'react-native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import HeartContainer from './components/Icon';
 
 let heartCount = 0;
 
@@ -32,8 +28,21 @@ const App = () => {
       ...state,
       hearts:
         state.hearts != null
-          ? [...state.hearts, {id: heartCount, right: getRandomNumber(50, 100)}]
-          : [{id: heartCount, right: getRandomNumber(0, 100)}],
+          ? [
+              ...state.hearts,
+              {
+                id: heartCount,
+                right:
+                  3 * getRandomNumber(0, Dimensions.get('window').width / 4),
+              },
+            ]
+          : [
+              {
+                id: heartCount,
+                right:
+                  3 * getRandomNumber(0, Dimensions.get('window').width / 4),
+              },
+            ],
     });
   };
 
@@ -82,83 +91,12 @@ const App = () => {
   );
 };
 
-const {height} = Dimensions.get('window');
-
-const animationEndY = Math.ceil(height * 0.8);
-const negativeEndY = animationEndY * -1;
-
-const HeartContainer = (props: {
-  style: StyleProp<ViewStyle>;
-  onComplete: Function;
-}) => {
-  const [state, setState] = useState<{
-    position: Animated.Value;
-  }>({
-    position: new Animated.Value(0),
-  });
-
-  let animation;
-  let opacityAnimation;
-  useEffect(() => {
-    Animated.timing(state.position, {
-      duration: 2 * 1000,
-      toValue: negativeEndY,
-      easing: Easing.ease,
-      useNativeDriver: true,
-    }).start(() => {
-      props.onComplete();
-    });
-  }, []);
-
-  animation = state.position.interpolate({
-    inputRange: [negativeEndY, 0],
-    outputRange: [animationEndY, 0],
-  });
-  opacityAnimation = animation.interpolate({
-    inputRange: [0, animationEndY],
-    outputRange: [1, 0],
-  });
-
-  return (
-    <Animated.View
-      style={[
-        styles.heartContainer,
-        {opacity: opacityAnimation, transform: [{translateY: state.position}]},
-        props.style,
-      ]}>
-      <Heart color="red" style={styles.heart} />
-    </Animated.View>
-  );
-};
-
-const Heart = (props: {
-  style: StyleProp<ViewStyle>;
-  color: ColorValue | number | undefined;
-}) => {
-  return (
-    <View style={[props.style]}>
-      <FontAwesomeIcon color={props.color} size={25} name="heart" />
-    </View>
-  );
-};
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
     flexDirection: 'column',
-  },
-  heart: {
-    width: 50,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  heartContainer: {
-    position: 'absolute',
-    bottom: 20,
-    backgroundColor: 'transparent',
   },
 });
 
