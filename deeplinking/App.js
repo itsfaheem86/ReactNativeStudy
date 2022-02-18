@@ -7,14 +7,36 @@ import SettingsStackNavigator from './screens/navigator/SettingsStackNavigator';
 const App = () => {
   const BottomTabNavigator = createBottomTabNavigator();
 
+  const linkingConfig = {
+    screens: {
+      HomeStack: {
+        screens: {
+          Home: 'homestack/home',
+          Dashboard: 'homestack/dashboard',
+        },
+      },
+      SettingsStack: {
+        screens: {
+          Settings: 'settingstack/settings',
+          AdvancedSettings: 'settingstack/advanced_settings',
+        },
+      },
+    },
+  };
+
+  const deepLinking = {
+    prefixes: ['https://deeplinking'],
+    config: linkingConfig,
+  };
+
   return (
-    <NavigationContainer>
-      <BottomTabNavigator.Navigator initialRouteName="home">
+    <NavigationContainer linking={deepLinking}>
+      <BottomTabNavigator.Navigator initialRouteName="HomeStack">
         <BottomTabNavigator.Screen
-          name="homestack"
+          name="HomeStack"
           component={HomeStackNavigator}></BottomTabNavigator.Screen>
         <BottomTabNavigator.Screen
-          name="settingstack"
+          name="SettingsStack"
           component={SettingsStackNavigator}></BottomTabNavigator.Screen>
       </BottomTabNavigator.Navigator>
     </NavigationContainer>

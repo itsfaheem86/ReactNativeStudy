@@ -9,11 +9,11 @@ const SettingsStackNavigator = () => {
   return (
     <SettingsStack.Navigator initialRouteName="settings">
       <SettingsStack.Screen
-        name="settings"
+        name="Settings"
         options={{headerShown: false}}
         component={SettingsScreen}></SettingsStack.Screen>
       <SettingsStack.Screen
-        name="advanced_settings"
+        name="AdvancedSettings"
         options={{headerShown: false}}
         component={AdvancedSettingsScreen}></SettingsStack.Screen>
     </SettingsStack.Navigator>

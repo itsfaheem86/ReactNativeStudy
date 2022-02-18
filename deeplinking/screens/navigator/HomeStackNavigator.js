@@ -9,11 +9,11 @@ const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator initialRouteName="dashboard">
       <HomeStack.Screen
-        name="home"
+        name="Home"
         options={{headerShown: false}}
         component={HomeScreen}></HomeStack.Screen>
       <HomeStack.Screen
-        name="dashboard"
+        name="Dashboard"
         options={{headerShown: false}}
         component={DashboardScreen}></HomeStack.Screen>
     </HomeStack.Navigator>
