@@ -1,2 +1,4 @@
 # What steps need to be taken to get autocomplete working for React Native in Visual Studio Code?
-https://stackoverflow.com/questions/38791210/what-steps-need-to-be-taken-to-get-autocomplete-working-for-react-native-in-visu
+# https://stackoverflow.com/questions/38791210/what-steps-need-to-be-taken-to-get-autocomplete-working-for-react-native-in-visu
+# No ability to specify multiple paths for same screen.
+# https://github.com/react-navigation/react-navigation/issues/9328#issuecomment-905706019
