@@ -19,29 +19,33 @@ const TabScene = ({
 }) => {
   const windowHeight = Dimensions.get('window').height;
 
-  // return (
-  //   <Animated.ScrollView
-  //     nestedScrollEnabled={false}
-  //     scrollToOverflowEnabled={true}
-  //     scrollEventThrottle={16}
-  //     ref={onGetRef}
-  //     onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {
-  //       useNativeDriver: true,
-  //     })}
-  //     onMomentumScrollBegin={onMomentumScrollBegin}
-  //     onScrollEndDrag={onScrollEndDrag}
-  //     onMomentumScrollEnd={onMomentumScrollEnd}
-  //     style={{
-  //       flex: 1,
-  //       paddingHorizontal: 10,
-  //       paddingTop: headerHeight + tabBarHeight,
-  //       minHeight: windowHeight,
-  //     }}>
-  //     {[...data, ...data].map(d => {
-  //       return <Text>{d}</Text>;
-  //     })}
-  //   </Animated.ScrollView>
-  // );
+  return (
+    <Animated.ScrollView
+      nestedScrollEnabled={false}
+      scrollToOverflowEnabled={true}
+      scrollEventThrottle={16}
+      ref={onGetRef}
+      onScroll={Animated.event([{nativeEvent: {contentOffset: {y: scrollY}}}], {
+        useNativeDriver: true,
+      })}
+      onMomentumScrollBegin={onMomentumScrollBegin}
+      onScrollEndDrag={onScrollEndDrag}
+      onMomentumScrollEnd={onMomentumScrollEnd}
+      style={{
+        flex: 1,
+        paddingHorizontal: 10,
+        paddingTop: headerHeight + tabBarHeight,
+        minHeight: windowHeight,
+      }}>
+      {numCols > 2
+        ? [...data, ...data].map(d => {
+            return <Text>{numCols}</Text>;
+          })
+        : [...data].map(d => {
+            return <Text>{numCols}</Text>;
+          })}
+    </Animated.ScrollView>
+  );
 
   return (
     <Animated.FlatList
@@ -101,10 +105,10 @@ const CollapsibleTabViewScreen = () => {
       if (item.key !== curRouteKey) {
         if (scrollY._value < headerHeight && scrollY._value >= 0) {
           if (item.value) {
-            // item.value.scrollTo({
-            item.value.scrollToOffset({
-              offset: scrollY._value,
-              // y: scrollY._value,
+            item.value.scrollTo({
+              // item.value.scrollToOffset({
+              // offset: scrollY._value,
+              y: scrollY._value,
               animated: false,
             });
             listOffset.current[item.key] = scrollY._value;
@@ -115,10 +119,10 @@ const CollapsibleTabViewScreen = () => {
             listOffset.current[item.key] == null
           ) {
             if (item.value) {
-              // item.value.scrollTo({
-              item.value.scrollToOffset({
-                offset: headerHeight,
-                // y: headerHeight,
+              item.value.scrollTo({
+                // item.value.scrollToOffset({
+                // offset: headerHeight,
+                y: headerHeight,
                 animated: false,
               });
               listOffset.current[item.key] = headerHeight;
