@@ -37,13 +37,15 @@ const TabScene = ({
         paddingTop: headerHeight + tabBarHeight,
         minHeight: windowHeight,
       }}>
-      {numCols > 2
-        ? [...data, ...data].map(d => {
-            return <Text>{numCols}</Text>;
-          })
-        : [...data].map(d => {
-            return <Text>{numCols}</Text>;
-          })}
+      <View style={{minHeight: Dimensions.get('screen').height}}>
+        {numCols > 2
+          ? [...data, ...data].map((d, index) => {
+              return <Text key={index}>{numCols}</Text>;
+            })
+          : [...data].map((d, index) => {
+              return <Text key={index}>{numCols}</Text>;
+            })}
+      </View>
     </Animated.ScrollView>
   );
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native';
-import CollapsibleTabViewScreen from './src/screens/CollapsibleTabViewScreen';
+import CollapsibleTabViewScreenFix from './src/screens/CollapsibleTabViewScreenFix';
 
 const App = () => {
   const [mode, setMode] = useState('collapsible');
@@ -8,7 +8,7 @@ const App = () => {
   const getDom = () => {
     switch (mode) {
       case 'collapsible':
-        return <CollapsibleTabViewScreen />;
+        return <CollapsibleTabViewScreenFix />;
     }
   };
 
