@@ -13,6 +13,13 @@ const App = () => {
     }
   }, [count]);
   const onPress = useCallback(() => setCount(Math.random()), []);
+
+  // const InsideWithoutMemo = ({onPress, property, data}) => {
+  //   return (
+  //     <MemoChild onPress={onPress} property={property} data={data}></MemoChild>
+  //   );
+  // };
+
   return (
     <View>
       <Text>{count}</Text>
@@ -21,18 +28,23 @@ const App = () => {
         onPress={() => {
           setCount(count + 1);
         }}></Button>
-      <MemoChild onPress={onPress} property={property} data={data}></MemoChild>
+      <InsideWithoutMemo onPress={onPress} property={property} data={data} />
     </View>
   );
 };
 
 export default App;
 
+const InsideWithoutMemo = ({onPress, property, data}) => {
+  return (
+    <MemoChild onPress={onPress} property={property} data={data}></MemoChild>
+  );
+};
+
 const MemoChild = React.memo(
   ({onPress, property, data}) => {
     const renders = useRef(0);
     const [count, setCount] = useState(0);
-
     return (
       <View>
         <Text>{`Parent property : ${property}`}</Text>
@@ -50,9 +62,10 @@ const MemoChild = React.memo(
     );
   },
   (previousProps, nextProps) => {
-    if (previousProps.data.isEvent !== nextProps.data.isEvent) {
-      return false;
-    }
-    return true;
+    console.log({previousProps, nextProps});
+    // if (previousProps.data.isEvent === nextProps.data.isEvent) {
+    //   return true;
+    // }
+    return false;
   },
 );
