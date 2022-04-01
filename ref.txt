@@ -5,3 +5,9 @@
 
 # Implementing a Collapsible Header with react-native-tab-view
 # https://medium.com/@linjunghsuan/implementing-a-collapsible-header-with-react-native-tab-view-24f15a685e07
+
+# How to check Oracle Java version if multiple versions of Java installed on Ubuntu
+# https://stackoverflow.com/questions/26043402/how-to-check-oracle-java-version-if-multiple-versions-of-java-installed-on-ubunt
+
+# How to set JAVA_HOME in Linux for all users
+# https://stackoverflow.com/questions/24641536/how-to-set-java-home-in-linux-for-all-users

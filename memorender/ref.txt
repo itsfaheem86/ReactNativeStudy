@@ -1,0 +1,2 @@
+# Autocompletion not working for React Native 
+# https://github.com/microsoft/vscode/issues/100026
