@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Button, SafeAreaView} from 'react-native';
+import {Button, SafeAreaView, View} from 'react-native';
 import Share from 'react-native-share';
 import ViewShot from 'react-native-view-shot';
 
@@ -24,6 +24,19 @@ const App = () => {
             console.log({res});
           }}
           title="EMAIL SHARE"></Button>
+        <View style={{marginTop: 20}}></View>
+        <Button
+          onPress={async () => {
+            const uri = await captureRef.current.capture();
+            const res = await Share.shareSingle({
+              title: 'ReactNative Instagram Share MVP',
+              social: Share.Social.INSTAGRAM,
+              url: uri,
+              failOnCancel: false,
+            });
+            console.log({res});
+          }}
+          title="INSTAGRAM SHARE"></Button>
       </ViewShot>
     </SafeAreaView>
   );
