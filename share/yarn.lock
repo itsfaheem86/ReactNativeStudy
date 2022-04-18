@@ -1356,6 +1356,32 @@
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.6.0.tgz#efcbd41937f9ae7434c714ab698604822d890759"
   integrity sha512-G/AdOadiZhnJp0jXCaBQU449W2h716OW/EoXeYkCytxKL06X1WCXB4DZpp8TpZ8eyIJVS1cw4lrlkkSYU21cDw==
 
+"@types/prop-types@*":
+  version "15.7.5"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
+  integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
+
+"@types/react-native@^0.67.4":
+  version "0.67.4"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.67.4.tgz#97a8d3cff2a7606f247008e93d9fe2a3879bc84e"
+  integrity sha512-L81CB6W1m0s7d+TH/loP318+VKPwwjWQBUTVYQ1+lQTWiE5jHxyihgCmd7JbwLICo708FRSDwJW7pJoiZHy6yg==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  version "18.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.5.tgz#1a4d4b705ae6af5aed369dec22800b20f89f5301"
+  integrity sha512-UPxNGInDCIKlfqBrm8LDXYWNfLHwIdisWcsH5GpMyGjhEDLFgTtlRBaoWuCua9HcyuE0rMkmAeZ3FXV1pYLIYQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/scheduler@*":
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
+
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
@@ -2316,6 +2342,11 @@ cssstyle@^2.3.0:
   integrity sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
   dependencies:
     cssom "~0.3.6"
+
+csstype@^3.0.2:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
+  integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
 data-urls@^2.0.0:
   version "2.0.0"
@@ -5468,6 +5499,16 @@ react-native-gradle-plugin@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz#b61a9234ad2f61430937911003cddd7e15c72b45"
   integrity sha512-eIlgtsmDp1jLC24dRn43hB3kEcZVqx6DUQbR0N1ABXGnMEafm9I3V3dUUeD1vh+Dy5WqijSoEwLNUPLgu5zDMg==
+
+react-native-share@^7.3.9:
+  version "7.3.9"
+  resolved "https://registry.yarnpkg.com/react-native-share/-/react-native-share-7.3.9.tgz#e745421027b96e78ade9794bddaf441ff4c19718"
+  integrity sha512-doPOUSQAkiIOZarFZvwrxVmfK3789CWsuZ6SNGzNCEGt7dA349vv2uSKDFUP5M7p+GIY+YqFaD3RSIt1Oct+PQ==
+
+react-native-view-shot@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-3.1.2.tgz#8c8e84c67a4bc8b603e697dbbd59dbc9b4f84825"
+  integrity sha512-9u9fPtp6a52UMoZ/UCPrCjKZk8tnkI9To0Eh6yYnLKFEGkRZ7Chm6DqwDJbYJHeZrheCCopaD5oEOnRqhF4L2Q==
 
 react-native@0.68.1:
   version "0.68.1"
