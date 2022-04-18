@@ -1,0 +1,1 @@
+# https://github.com/react-native-share/react-native-share/blob/4008b5d846bc993d20f66b55aa4682b771cbfc80/website/docs/share-single.mdx
