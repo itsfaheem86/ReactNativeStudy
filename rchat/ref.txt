@@ -1,0 +1,2 @@
+# Difference between get() and onSnapshot() in Cloud Firestore
+# https://stackoverflow.com/questions/54479892/difference-between-get-and-onsnapshot-in-cloud-firestore#:~:text=It's%20a%20kind%20of%20%22get,with%20the%20onSnapshot()%20method.
