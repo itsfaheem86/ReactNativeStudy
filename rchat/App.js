@@ -4,7 +4,16 @@ import {View} from 'react-native';
 
 const App = () => {
   useEffect(() => {
-    const userDocument = firestore().collection('Users').doc('ABC');
+    // collection -> doc -> collection :'(
+    const unsubscribe = firestore()
+      .collection('chats')
+      .doc('iIb7cKib6nyBSFBIW6w7')
+      .onSnapshot(documentSnapshot => {
+        console.log({documentSnapshot: documentSnapshot.data()});
+      });
+
+    // Stop listening for updates when no longer required
+    return () => unsubscribe();
   }, []);
   return <View></View>;
 };
