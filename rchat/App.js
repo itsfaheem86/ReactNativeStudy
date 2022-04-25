@@ -10,6 +10,8 @@ const ChatRoom = ({navigation, route}) => {
   const db = firebase.firestore();
   const chatsRef = db.collection('chats').doc(room.roomId);
 
+  const sender = Math.random() > 0.5 ? true : false;
+
   const [messages, setMessages] = useState(room.messages || []);
 
   useEffect(() => {
@@ -36,7 +38,12 @@ const ChatRoom = ({navigation, route}) => {
         onSend={async messages => {
           const writes = messages.map(m =>
             chatsRef.update({
-              messages: firebase.firestore.FieldValue.arrayUnion(m),
+              messages: firebase.firestore.FieldValue.arrayUnion({
+                ...m,
+                user: {
+                  _id: sender ? room.users[0] : room.users[1],
+                },
+              }),
             }),
           );
           await Promise.all(writes);
