@@ -40,18 +40,29 @@ const App = () => {
   const chatsRef = db.collection('chats');
 
   useEffect(() => {
-    // collection -> doc -> collection :'(
+    // // collection -> doc -> collection :'(
+    // const unsubscribe = chatsRef
+    //   // .doc('iIb7cKib6nyBSFBIW6w7')
+    //   .onSnapshot(documentSnapshot => {
+    //     // console.log({documentSnapshot: documentSnapshot.docs()});
+    //     documentSnapshot.docChanges().forEach(({doc}) => {
+    //       console.log({data: doc.id});
+    //       console.log({data: doc.data()});
+    //     });
+    //   });
+
+    // // Stop listening for updates when no longer required
+    // return () => unsubscribe();
+
     const unsubscribe = chatsRef
-      // .doc('iIb7cKib6nyBSFBIW6w7')
-      .onSnapshot(documentSnapshot => {
-        // console.log({documentSnapshot: documentSnapshot.docs()});
-        documentSnapshot.docChanges().forEach(({doc}) => {
-          console.log({data: doc.id});
-          console.log({data: doc.data()});
+      .where('receiverId', '==', 'randomId')
+      .onSnapshot(snapShot => {
+        snapShot.docs.map(doc => {
+          console.log({doc: doc.data()});
+          doc.ref.update({byCode: true});
         });
       });
 
-    // Stop listening for updates when no longer required
     return () => unsubscribe();
   }, []);
 
