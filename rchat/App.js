@@ -6,16 +6,43 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {GiftedChat} from 'react-native-gifted-chat';
 
 const ChatRoom = ({navigation, route}) => {
-  const {room} = route.params;
+  const {room, me} = route.params;
+  const db = firebase.firestore();
+  const chatsRef = db.collection('chats').doc(room.roomId);
+
+  const [messages, setMessages] = useState(room.messages || []);
+
+  useEffect(() => {
+    const unsubscribe = chatsRef.onSnapshot(documentSnapshot => {
+      setMessages(
+        documentSnapshot
+          .data()
+          ?.messages?.reverse()
+          ?.map(message => {
+            return {
+              ...message,
+              createdAt: message.createdAt.toDate(),
+            };
+          }) || [],
+      );
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <View style={{flex: 1}}>
       <GiftedChat
-        messages={room.messages || []}
-        onSend={messages => {
-          console.log({messages});
+        messages={messages}
+        onSend={async messages => {
+          const writes = messages.map(m =>
+            chatsRef.update({
+              messages: firebase.firestore.FieldValue.arrayUnion(m),
+            }),
+          );
+          await Promise.all(writes);
         }}
         user={{
-          _id: 1,
+          _id: me,
         }}
       />
     </View>
@@ -32,7 +59,7 @@ const Home = ({navigation}) => {
       .where('users', 'array-contains', 'randomUserOne')
       .onSnapshot(documentSnapshot => {
         const mappedSnapshot = documentSnapshot.docs.map(doc => {
-          return {...doc.data()};
+          return {...doc.data(), roomId: doc.id};
         });
         setRooms(mappedSnapshot);
       });
@@ -49,6 +76,7 @@ const Home = ({navigation}) => {
             onPress={() => {
               navigation.navigate('chat-room', {
                 room,
+                me: ME,
               });
             }}
             style={{
