@@ -8,25 +8,29 @@ import {GiftedChat} from 'react-native-gifted-chat';
 const ChatRoom = ({navigation, route}) => {
   const {room, me} = route.params;
   const db = firebase.firestore();
-  const chatsRef = db.collection('chats').doc(room.roomId);
+  const chatsRef = db.collection('chats').doc(room.users.sort().join('#'));
 
   const sender = Math.random() > 0.5 ? true : false;
 
-  const [messages, setMessages] = useState(room.messages || []);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const unsubscribe = chatsRef.onSnapshot(documentSnapshot => {
-      setMessages(
-        documentSnapshot
-          .data()
-          ?.messages?.reverse()
-          ?.map(message => {
-            return {
-              ...message,
-              createdAt: message.createdAt.toDate(),
-            };
-          }) || [],
-      );
+      if (documentSnapshot.data()) {
+        setMessages(
+          documentSnapshot
+            .data()
+            ?.messages?.reverse()
+            ?.map(message => {
+              return {
+                ...message,
+                createdAt: message.createdAt.toDate(),
+              };
+            }) || [],
+        );
+      } else if (!documentSnapshot.data()) {
+        chatsRef.set({users: room.users});
+      }
     });
     return () => unsubscribe();
   }, []);
