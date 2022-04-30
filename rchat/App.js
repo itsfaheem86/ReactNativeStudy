@@ -13,6 +13,8 @@ const ChatRoom = ({navigation, route}) => {
   const sender = Math.random() > 0.5 ? true : false;
   const pageSize = 10;
 
+  console.log({room});
+
   const [messages, setMessages] = useState([]);
   const [loadEarlierData, setLoadEarlierData] = useState({
     isLoadingEarlier: false,
@@ -32,6 +34,18 @@ const ChatRoom = ({navigation, route}) => {
             messageChanges.push({
               ...docChange.doc.data(),
               createdAt: docChange.doc.data().createdAt.toDate(),
+              sent: !!room?.['readData#randomUserOne']
+                ? room['readData#randomUserOne'].date.toDate() >
+                  docChange.doc.data().createdAt.toDate()
+                : false,
+              pending: !!room?.['readData#randomUserOne']
+                ? room['readData#randomUserOne'].date.toDate() >
+                  docChange.doc.data().createdAt.toDate()
+                : false,
+              received: !!room?.['readData#randomUserOne']
+                ? room['readData#randomUserOne'].date.toDate() >
+                  docChange.doc.data().createdAt.toDate()
+                : false,
             });
           }
         });
@@ -94,6 +108,18 @@ const ChatRoom = ({navigation, route}) => {
                       return {
                         ...doc.data(),
                         createdAt: doc.data().createdAt.toDate(),
+                        sent: !!room?.['readData#randomUserOne']
+                          ? room['readData#randomUserOne'].date.toDate() >
+                            doc.data().createdAt.toDate()
+                          : false,
+                        pending: !!room?.['readData#randomUserOne']
+                          ? room['readData#randomUserOne'].date.toDate() >
+                            doc.data().createdAt.toDate()
+                          : false,
+                        received: !!room?.['readData#randomUserOne']
+                          ? room['readData#randomUserOne'].date.toDate() >
+                            doc.data().createdAt.toDate()
+                          : false,
                       };
                     }),
                   ),
@@ -122,6 +148,16 @@ const Home = ({navigation}) => {
       .onSnapshot(documentSnapshot => {
         const mappedSnapshot = documentSnapshot.docs.map(doc => {
           return {...doc.data(), roomId: doc.id};
+        });
+        documentSnapshot.docChanges().forEach(docChange => {
+          console.log({type: docChange.type});
+          if (docChange.type == 'added') {
+            const updatedReadData = {};
+            updatedReadData['readData#randomUserTwo'] = {
+              date: new Date(),
+            };
+            docChange.doc.ref.update({...updatedReadData});
+          }
         });
         setRooms(mappedSnapshot);
       });
