@@ -24,14 +24,22 @@ const ChatRoom = ({navigation, route}) => {
       .orderBy('createdAt', 'desc')
       .limit(pageSize)
       .onSnapshot(documentSnapshot => {
-        setMessages([
-          ...documentSnapshot.docs.map(doc => {
-            return {...doc.data(), createdAt: doc.data().createdAt.toDate()};
-          }),
-        ]);
+        let messageChanges = [];
+        documentSnapshot.docChanges().forEach(docChange => {
+          console.log({type: docChange.type});
+          if (docChange.type == 'added') {
+            messageChanges.push({
+              ...docChange.doc.data(),
+              createdAt: docChange.doc.data().createdAt.toDate(),
+            });
+          }
+        });
+        setMessages(previousState => [...messageChanges, ...previousState]);
       });
     return () => unsubscribe();
   }, []);
+
+  console.log({messages});
 
   return (
     <View style={{flex: 1}}>
