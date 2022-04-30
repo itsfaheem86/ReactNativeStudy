@@ -2,7 +2,7 @@ import {firebase} from '@react-native-firebase/firestore';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
-import {Platform, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {GiftedChat, LoadEarlier} from 'react-native-gifted-chat';
 
 const ChatRoom = ({navigation, route}) => {
@@ -10,29 +10,26 @@ const ChatRoom = ({navigation, route}) => {
   const db = firebase.firestore();
   const chatsRef = db.collection('chats').doc(room.users.sort().join('#'));
   const messagesRef = chatsRef.collection('messages');
-
   const sender = Math.random() > 0.5 ? true : false;
+  const pageSize = 10;
 
   const [messages, setMessages] = useState([]);
+  const [loadEarlierData, setLoadEarlierData] = useState({
+    isLoadingEarlier: false,
+    loadEarlier: true,
+  });
 
   useEffect(() => {
-    const unsubscribe = chatsRef.onSnapshot(documentSnapshot => {
-      if (documentSnapshot.data()) {
-        setMessages(
-          documentSnapshot
-            .data()
-            ?.messages?.reverse()
-            ?.map(message => {
-              return {
-                ...message,
-                createdAt: message.createdAt.toDate(),
-              };
-            }) || [],
-        );
-      } else if (!documentSnapshot.data()) {
-        chatsRef.set({users: room.users});
-      }
-    });
+    const unsubscribe = messagesRef
+      .orderBy('createdAt', 'desc')
+      .limit(pageSize)
+      .onSnapshot(documentSnapshot => {
+        setMessages([
+          ...documentSnapshot.docs.map(doc => {
+            return {...doc.data(), createdAt: doc.data().createdAt.toDate()};
+          }),
+        ]);
+      });
     return () => unsubscribe();
   }, []);
 
@@ -56,15 +53,48 @@ const ChatRoom = ({navigation, route}) => {
         user={{
           _id: me,
         }}
-        loadEarlier={false}
-        isLoadingEarlier={false}
+        loadEarlier={loadEarlierData.loadEarlier}
+        isLoadingEarlier={loadEarlierData.isLoadingEarlier}
         onLoadEarlier={() => {
-          console.log({msg: 'load.more'});
+          console.log({
+            msg: 'loading more!',
+          });
+          setLoadEarlierData({...loadEarlierData, isLoadingEarlier: true});
+          messagesRef
+            .orderBy('createdAt', 'desc')
+            // Last ordered property
+            .startAfter(messages[messages.length - 1].createdAt)
+            .limit(pageSize)
+            .get()
+            .then(documentSnapshot => {
+              if (!documentSnapshot.docs.length) {
+                setLoadEarlierData({
+                  ...loadEarlierData,
+                  isLoadingEarlier: false,
+                  loadEarlier: false,
+                });
+              } else {
+                setLoadEarlierData({
+                  ...loadEarlierData,
+                  isLoadingEarlier: false,
+                  loadEarlier: true,
+                });
+                setMessages([
+                  ...messages.concat(
+                    documentSnapshot.docs.map(doc => {
+                      return {
+                        ...doc.data(),
+                        createdAt: doc.data().createdAt.toDate(),
+                      };
+                    }),
+                  ),
+                ]);
+              }
+            });
         }}
         renderLoadEarlier={props => {
           return <LoadEarlier {...props} label="Load Previous Messages" />;
         }}
-        inverted={Platform.OS !== 'web'}
         // scrollToBottom={true}
         infiniteScroll
       />
