@@ -22,11 +22,12 @@ const ChatRoom = ({navigation, route}) => {
   useEffect(() => {
     const unsubscribe = messagesRef
       .orderBy('createdAt', 'desc')
+      // Limiting the page emitting unnecessary 'removed' state on new element
       .limit(pageSize)
       .onSnapshot(documentSnapshot => {
         let messageChanges = [];
         documentSnapshot.docChanges().forEach(docChange => {
-          console.log({type: docChange.type});
+          console.log({type: docChange.type, data: docChange.doc.data()});
           if (docChange.type == 'added') {
             messageChanges.push({
               ...docChange.doc.data(),
