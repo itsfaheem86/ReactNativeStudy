@@ -2,13 +2,14 @@ import {firebase} from '@react-native-firebase/firestore';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import {GiftedChat} from 'react-native-gifted-chat';
+import {Platform, Text, TouchableOpacity, View} from 'react-native';
+import {GiftedChat, LoadEarlier} from 'react-native-gifted-chat';
 
 const ChatRoom = ({navigation, route}) => {
   const {room, me} = route.params;
   const db = firebase.firestore();
   const chatsRef = db.collection('chats').doc(room.users.sort().join('#'));
+  const messagesRef = chatsRef.collection('messages');
 
   const sender = Math.random() > 0.5 ? true : false;
 
@@ -40,21 +41,32 @@ const ChatRoom = ({navigation, route}) => {
       <GiftedChat
         messages={messages}
         onSend={async messages => {
-          const writes = messages.map(m =>
-            chatsRef.update({
-              messages: firebase.firestore.FieldValue.arrayUnion({
-                ...m,
-                user: {
-                  _id: sender ? room.users[0] : room.users[1],
-                },
-              }),
-            }),
-          );
+          const writes = messages.map(m => {
+            messagesRef.add({
+              ...m,
+              user: {
+                _id: sender ? room.users[0] : room.users[1],
+                avatar: 'https://placeimg.com/140/140/any',
+                name: 'udev',
+              },
+            });
+          });
           await Promise.all(writes);
         }}
         user={{
           _id: me,
         }}
+        loadEarlier={false}
+        isLoadingEarlier={false}
+        onLoadEarlier={() => {
+          console.log({msg: 'load.more'});
+        }}
+        renderLoadEarlier={props => {
+          return <LoadEarlier {...props} label="Load Previous Messages" />;
+        }}
+        inverted={Platform.OS !== 'web'}
+        // scrollToBottom={true}
+        infiniteScroll
       />
     </View>
   );
