@@ -1,0 +1,2 @@
+# React Native KeyboardAvoidingView covers last text input
+# https://stackoverflow.com/questions/43854912/react-native-keyboardavoidingview-covers-last-text-input
