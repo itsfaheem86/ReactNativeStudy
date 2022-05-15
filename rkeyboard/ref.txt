@@ -1,2 +1,6 @@
 # React Native KeyboardAvoidingView covers last text input
 # https://stackoverflow.com/questions/43854912/react-native-keyboardavoidingview-covers-last-text-input
+
+
+# Using KeyboardAwareScrollView and KeyboardAvoidingView in React Native
+# https://blog.logrocket.com/keyboardawarescrollview-keyboardavoidingview-react-native/
