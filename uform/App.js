@@ -1,8 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
+import Noob from './app/Noob';
 
 const App = () => {
-  return <View></View>;
+  console.log({msg: 'App.mounted'});
+  return <Noob />;
 };
 
 export default App;
