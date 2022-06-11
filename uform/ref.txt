@@ -1,0 +1,2 @@
+# Organize imports in ES6 JSX removes React import
+# https://github.com/microsoft/vscode/issues/47287
