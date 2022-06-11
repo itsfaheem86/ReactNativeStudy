@@ -1,9 +1,9 @@
 import React from 'react';
-import Noob from './app/Noob';
+import Schema from './app/Schema';
 
 const App = () => {
   console.log({msg: 'App.mounted'});
-  return <Noob />;
+  return <Schema />;
 };
 
 export default App;
