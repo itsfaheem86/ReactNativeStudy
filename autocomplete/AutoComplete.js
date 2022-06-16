@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
-import {Menu, TextInput} from 'react-native-paper';
+import {List, TextInput} from 'react-native-paper';
 
 const AutoComplete = ({
   value: origValue,
@@ -49,16 +49,13 @@ const AutoComplete = ({
       {menuVisible && filteredData && (
         <View
           style={{
-            flex: 1,
             borderWidth: 2,
             flexDirection: 'column',
             borderColor: 'grey',
           }}>
           {filteredData.map((datum, i) => (
-            <Menu.Item
+            <List.Item
               key={i}
-              style={[{width: '100%'}, menuStyle]}
-              contentStyle={{width: '100%'}}
               onPress={() => {
                 setValue(datum);
                 setMenuVisible(false);
