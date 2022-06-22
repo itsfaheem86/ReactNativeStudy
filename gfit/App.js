@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import GoogleFit, {Scopes} from 'react-native-google-fit';
+import GoogleFit, {BucketUnit, Scopes} from 'react-native-google-fit';
 
 const App = () => {
   useEffect(() => {
@@ -15,9 +15,13 @@ const App = () => {
     GoogleFit.authorize(options)
       .then(res => {
         console.log({res});
-        GoogleFit.getDailySteps()
+        GoogleFit.getDailyStepCountSamples({
+          bucketUnit: BucketUnit.HOUR,
+        })
           .then(results => {
-            console.log({results});
+            console.log({
+              results,
+            });
           })
           .catch(error => {
             console.log({error});

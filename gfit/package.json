@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "moment": "^2.29.3",
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-google-fit": "^0.18.3"
