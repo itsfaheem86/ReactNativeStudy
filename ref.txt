@@ -11,8 +11,8 @@
 
 # How to set JAVA_HOME in Linux for all users
 # https://stackoverflow.com/questions/24641536/how-to-set-java-home-in-linux-for-all-users
-
-
-# ToDo
 # Learn react hook form
 # https://react-hook-form.com/get-started#Handleerrors
+
+# ToDo
+# https://github.com/RonakMindbowser/custompushnotificationdemo/blob/261acec7db659e5861ddf86ceab5a59a24eed1fc/src/GoogleFitAndroidScreen.js
