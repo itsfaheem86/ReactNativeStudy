@@ -1,11 +1,14 @@
-import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, View} from 'react-native';
 import GoogleFit, {BucketUnit, Scopes} from 'react-native-google-fit';
+import {DEFAULT_STEPCOUNT_SOURCE} from './src/constants/strings';
 
 const App = () => {
+  const [totalSteps, setTotalStep] = useState(0);
+
   useEffect(() => {
     const options = {
-      scopes: [Scopes.FITNESS_ACTIVITY_READ, Scopes.FITNESS_ACTIVITY_WRITE],
+      scopes: [Scopes.FITNESS_ACTIVITY_READ],
     };
     GoogleFit.authorize(options)
       .then(res => {
@@ -17,6 +20,10 @@ const App = () => {
             console.log({
               results,
             });
+            const result = results.find(
+              res => res.source == DEFAULT_STEPCOUNT_SOURCE,
+            );
+            setTotalStep(result.steps[0].value);
           })
           .catch(error => {
             console.log({error});
@@ -26,7 +33,22 @@ const App = () => {
         console.log({err});
       });
   }, []);
-  return <View></View>;
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: 'black',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Text
+        style={{
+          color: 'white',
+        }}>
+        {totalSteps}
+      </Text>
+    </View>
+  );
 };
 
 export default App;
