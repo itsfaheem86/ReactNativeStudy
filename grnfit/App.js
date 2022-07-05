@@ -11,28 +11,35 @@ const App = () => {
       scopes: [Scopes.FITNESS_ACTIVITY_READ],
     };
     GoogleFit.authorize(options)
-      .then(res => {
-        console.log({res});
-        GoogleFit.getDailyStepCountSamples({
-          bucketUnit: BucketUnit.HOUR,
-        })
-          .then(results => {
-            console.log({
-              results,
-            });
-            const result = results.find(
-              res => res.source == DEFAULT_STEPCOUNT_SOURCE,
-            );
-            setTotalStep(result.steps[0].value);
-          })
-          .catch(error => {
-            console.log({error});
+      .then(authRes => {
+        console.log({authRes});
+        GoogleFit.startRecording(recordRes => {
+          console.log({recordRes});
+          GoogleFit.observeSteps(observeStepsResponse => {
+            console.log({observeStepsResponse});
+            GoogleFit.getDailyStepCountSamples({
+              bucketUnit: BucketUnit.HOUR,
+            })
+              .then(results => {
+                console.log({
+                  results,
+                });
+                const result = results.find(
+                  res => res.source == DEFAULT_STEPCOUNT_SOURCE,
+                );
+                setTotalStep(result.steps[0].value);
+              })
+              .catch(error => {
+                console.log({error});
+              });
           });
+        });
       })
       .catch(err => {
         console.log({err});
       });
   }, []);
+
   return (
     <View
       style={{
