@@ -13,6 +13,7 @@
     "moment": "^2.29.3",
     "react": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-background-actions": "^2.6.7",
     "react-native-google-fit": "^0.18.3"
   },
   "devDependencies": {

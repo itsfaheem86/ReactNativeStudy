@@ -1,0 +1,2 @@
+# How to access the access token from GoogleApiClient for connecting with REST Api
+# https://github.com/StasDoskalenko/react-native-google-fit/issues/74
