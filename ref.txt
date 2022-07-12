@@ -16,3 +16,12 @@
 
 # ToDo
 # https://github.com/RonakMindbowser/custompushnotificationdemo/blob/261acec7db659e5861ddf86ceab5a59a24eed1fc/src/GoogleFitAndroidScreen.js
+
+# Android Hide Notification from Firebase
+# https://stackoverflow.com/questions/53946001/android-hide-notification-from-firebase
+
+# Create Custom Tokens
+# https://firebase.google.com/docs/auth/admin/create-custom-tokens
+
+# Authenticate with Firebase in JavaScript Using a Custom Authentication System
+# https://firebase.google.com/docs/auth/web/custom-auth#web-version-9
