@@ -1,6 +1,6 @@
 import notifee from '@notifee/react-native';
 import messaging from '@react-native-firebase/messaging';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, SafeAreaView, ScrollView, View} from 'react-native';
 function App(): JSX.Element {
   async function onDisplayLocalNotification() {
@@ -43,6 +43,32 @@ function App(): JSX.Element {
       console.log({token});
     }
   }
+
+  // Listening to foreground messages
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      console.log({remoteMessage});
+      const notification = remoteMessage.notification;
+      notifee.displayNotification({
+        title: notification?.title,
+        body: notification?.body,
+        android: {
+          // Channel id should be created ones and should have permission
+          channelId: 'default',
+          // Actions showing action in the notification widget but I don't know how to configure it for now
+          // actions: [
+          //   {
+          //     title: 'READ',
+          //     pressAction: {
+          //       id: 'READ',
+          //     },
+          //   },
+          // ],
+        },
+      });
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <SafeAreaView>
