@@ -16,8 +16,8 @@ const App = () => {
       <StatusBar barStyle={false ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentContainerStyle={{
-          width: '100%',
-          height: '100%',
+          minWidth: '100%',
+          minHeight: '100%',
           padding: 16,
           justifyContent: 'center',
           alignItems: 'center',
