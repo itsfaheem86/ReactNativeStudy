@@ -1,0 +1,7 @@
+# Configure firebase messaging
+
+# Notifee installation
+# https://notifee.app/react-native/docs/installation
+
+# Follow basic and display notification
+# https://notifee.app/react-native/docs/usage
