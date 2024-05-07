@@ -1,0 +1,2 @@
+# How to Setup Path Aliases in a React Native app with Typescript
+-> https://pratapsharma.com.np/path-alias-in-a-typescript-project
