@@ -6,7 +6,7 @@ module.exports = {
       {
         root: ['.'],
         alias: {
-          components: './src/components',
+          '^@app/(.+)': './src/\\1', // Checks only one time https://stackoverflow.com/questions/38705002/the-meaning-of-1-operator-in-java-regexes
         },
       },
     ],

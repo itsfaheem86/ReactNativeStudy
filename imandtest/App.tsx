@@ -1,4 +1,4 @@
-import CustomText from 'components/Text';
+import CustomText from '@app/components/Text';
 import {View} from 'react-native';
 
 function App(): React.JSX.Element {
