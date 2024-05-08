@@ -1,2 +1,6 @@
 # How to Setup Path Aliases in a React Native app with Typescript
 -> https://pratapsharma.com.np/path-alias-in-a-typescript-project
+
+# How to clear react-native cache?
+-> https://stackoverflow.com/questions/46878638/how-to-clear-react-native-cache
+npm start -- --reset-cache
