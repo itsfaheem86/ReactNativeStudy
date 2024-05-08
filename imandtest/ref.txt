@@ -4,3 +4,8 @@
 # How to clear react-native cache?
 -> https://stackoverflow.com/questions/46878638/how-to-clear-react-native-cache
 npm start -- --reset-cache
+
+# transformIgnorePatterns to include ESM modules
+-> https://jestjs.io/docs/tutorial-react-native
+-> https://reactnative.dev/docs/testing-overview
+-> https://callstack.github.io/react-native-testing-library/docs/getting-started
