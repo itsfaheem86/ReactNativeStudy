@@ -1,9 +1,11 @@
 import {Text, View} from 'react-native';
+import Config from 'react-native-config';
 
 const App = () => {
+  console.log();
   return (
     <View>
-      <Text>Multi envs</Text>
+      <Text>{`Current env : ${Config.NODE_ENV}`}</Text>
     </View>
   );
 };
