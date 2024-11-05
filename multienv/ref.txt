@@ -1,0 +1,10 @@
+# https://www.youtube.com/watch?v=rhdOWYqc-Cg&ab_channel=JASACADAMY
+* IOS steps.
+-> Open workspace in xcode.
+-> Create multiple targets from existing one.
+-> Change target names and plist names.
+-> Go to "Build settings" for each target and confirm target is pointing to expected plist path.
+-> Go to Product -> Schema -> Manage schema -> Delete copies and create new one with target and put proper name.
+-> Install react-native-config -> Pod install -> Will face errors -> Add all the targets to inherit dependencies.
+# Seems like this not working perfectly
+-> Go to Product -> Schema -> Edit schema -> Build -> Pre actions -> Add new run script action and add : cp "${PROJECT_DIR}/../.env.dev" "${PROJECT_DIR}/../.env" and make sure to select provide build settings from with correct target.
