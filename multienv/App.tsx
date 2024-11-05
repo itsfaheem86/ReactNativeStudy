@@ -1,9 +1,9 @@
-import {SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
 import Config from 'react-native-config';
 import DeviceInfo from 'react-native-device-info';
 
 const App = () => {
-  console.log();
+  console.log(Config.NODE_ENV);
   return (
     <SafeAreaView>
       <Text>{`Current env : ${Config.NODE_ENV}`}</Text>
