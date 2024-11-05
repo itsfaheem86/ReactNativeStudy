@@ -5,6 +5,7 @@
   "scripts": {
     "android:dev:fixed": "react-native run-android --mode=devDebug --appIdSuffix=dev",
     "android:qa:fixed": "react-native run-android --mode=qaDebug --appIdSuffix=qa",
+    "android:prod:fixed": "react-native run-android --mode=prodDebug",
     "android:dev:release:fixed": "react-native run-android --mode=devRelease --appIdSuffix=dev",
     "android:qa:release:fixed": "react-native run-android --mode=qaRelease --appIdSuffix=qa",
     "android:dev": "ENVFILE=.env.dev react-native run-android --mode=devDebug --appIdSuffix=dev",

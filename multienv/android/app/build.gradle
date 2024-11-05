@@ -132,7 +132,7 @@ android {
             resValue "string", "build_config_package", "com.multienv"
         }
         prod {
-            applicationId "com.multienv.prod"
+            applicationId "com.multienv"
             // minSdkVersion rootProject.ext.minSdkVersion
             // targetSdkVersion rootProject.ext.targetSdkVersion
             resValue "string", "build_config_package", "com.multienv"
