@@ -7,5 +7,7 @@
 -> Go to Product -> Schema -> Manage schema -> Delete copies and create new one with target and put proper name.
 -> Install react-native-config -> Pod install -> Will face errors -> Add all the targets to inherit dependencies.
 # Seems like this not working perfectly
-# TODO: Try this https://github.com/lugg/react-native-config/issues/591 if have time
 -> Go to Product -> Schema -> Edit schema -> Build -> Pre actions -> Add new run script action and add : cp "${PROJECT_DIR}/../.env.dev" "${PROJECT_DIR}/../.env" and make sure to select provide build settings from with correct target.
+# Fix: Try this https://github.com/lugg/react-native-config/issues/591 if have time
+-> "deleteDerivedData": "rm -rf ${HOME}/Library/Developer/Xcode/DerivedData/*" Works but takes too long time to build.
+-> Alternative and seems faster: "preBuild": "rm -f node_modules/react-native-config/ios/ReactNativeConfig/GeneratedDotEnv.m node_modules/react-native-config/android/build/generated/source/buildConfig/debug/com/lugg/RNCConfig/BuildConfig.java node_modules/react-native-config/android/build/generated/source/buildConfig/release/com/lugg/RNCConfig/BuildConfig.java"

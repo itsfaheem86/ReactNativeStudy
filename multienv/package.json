@@ -14,13 +14,21 @@
     "android:qa:alternative": "ENVFILE=.env.qa react-native run-android --mode=qaDebug --appId=com.multienv.qa",
     "ios:dev": "react-native run-ios --scheme multienv-dev",
     "ios:qa": "react-native run-ios --scheme multienv-qa",
-    "ios:prod": "react-native run-ios --scheme multienv",
+    "ios:prod": "react-native run-ios --scheme multienv-prod",
+    "ios:dev1": "npm run deleteDerivedData && react-native run-ios --scheme multienv-dev",
+    "ios:qa1": "npm run deleteDerivedData && react-native run-ios --scheme multienv-qa",
+    "ios:prod1": "npm run deleteDerivedData && react-native run-ios --scheme multienv-prod",
+    "ios:dev2": "npm run preBuild && react-native run-ios --scheme multienv-dev",
+    "ios:qa2": "npm run preBuild && react-native run-ios --scheme multienv-qa",
+    "ios:prod2": "npm run preBuild && react-native run-ios --scheme multienv-prod",
     "ios:dev:fixed": "cp .env.dev .env && react-native run-ios --scheme multienv-dev",
     "ios:qa:fixed": "cp .env.qa .env && react-native run-ios --scheme multienv-qa",
     "ios:prod:fixed": "cp .env.prod .env && react-native run-ios --scheme multienv",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "deleteDerivedData": "rm -rf ${HOME}/Library/Developer/Xcode/DerivedData/*",
+    "preBuild": "rm -f node_modules/react-native-config/ios/ReactNativeConfig/GeneratedDotEnv.m"
   },
   "dependencies": {
     "react": "18.3.1",

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-multienv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-multienv.a */; };
+		0270F88FAD022078126B8D3A /* libPods-multienvCommon-multienv-prod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7BB267EE19449B7C6EE264 /* libPods-multienvCommon-multienv-prod.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1BD5EAFE264336EC532C7452 /* libPods-multienvCommon-multienv-qa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1332AEA659971B4FEC84FEC0 /* libPods-multienvCommon-multienv-qa.a */; };
+		1E51BC1F06C82BBA70807B98 /* libPods-multienvCommon-multienv-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2BE87E91B5F24BA9C31456 /* libPods-multienvCommon-multienv-dev.a */; };
 		431DCD022CD9E39C005877C0 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		431DCD032CD9E39C005877C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		431DCD072CD9E39C005877C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -21,16 +23,15 @@
 		431DCD2C2CD9E3BF005877C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		431DCD2D2CD9E3BF005877C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		431DCD2E2CD9E3BF005877C0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		5562E525069CB25D7996445C /* libPods-multienv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-multienv.a */; };
-		595C0EC60481F17D8C53DA13 /* libPods-multienv-multienv-qa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4BA29D9DD045F8E16F0648 /* libPods-multienv-multienv-qa.a */; };
-		7C46B3FBFB3DD146DBC630FB /* libPods-multienv-multienv-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59995C3C84466DE122F1D2E7 /* libPods-multienv-multienv-dev.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A89697BBDEA835C249311983 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003B47A590381F787F27C778 /* Pods-multienvCommon-multienv-prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-prod.debug.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod.debug.xcconfig"; sourceTree = "<group>"; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* multienvTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = multienvTests.m; sourceTree = "<group>"; };
+		1332AEA659971B4FEC84FEC0 /* libPods-multienvCommon-multienv-qa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienvCommon-multienv-qa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* multienv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = multienv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = multienv/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = multienv/AppDelegate.mm; sourceTree = "<group>"; };
@@ -39,20 +40,24 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = multienv/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = multienv/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-multienv-multienvTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienv-multienvTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7BB267EE19449B7C6EE264 /* libPods-multienvCommon-multienv-prod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienvCommon-multienv-prod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		431DCD102CD9E39C005877C0 /* multienv-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "multienv-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		431DCD112CD9E39C005877C0 /* multienv-dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "multienv-dev-Info.plist"; path = "/Users/faheem/Desktop/GitHub/Personal/Study/ReactNativeStudy/multienv/ios/multienv-dev-Info.plist"; sourceTree = "<absolute>"; };
 		431DCD352CD9E3BF005877C0 /* multienv-qa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "multienv-qa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		431DCD362CD9E3BF005877C0 /* multienv-qa-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "multienv-qa-Info.plist"; path = "/Users/faheem/Desktop/GitHub/Personal/Study/ReactNativeStudy/multienv/ios/multienv-qa-Info.plist"; sourceTree = "<absolute>"; };
-		59995C3C84466DE122F1D2E7 /* libPods-multienv-multienv-dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienv-multienv-dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7EB9410499542E8C5724F5 /* Pods-multienv-multienvTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienvTests.debug.xcconfig"; path = "Target Support Files/Pods-multienv-multienvTests/Pods-multienv-multienvTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-multienv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CB9E58A5539A0F4D67E9C12 /* Pods-multienvCommon-multienv-prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-prod.release.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod.release.xcconfig"; sourceTree = "<group>"; };
 		6EC7412498BEB835C137A82B /* Pods-multienv-multienv-qa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienv-qa.debug.xcconfig"; path = "Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = multienv/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-multienv-multienvTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienvTests.release.xcconfig"; path = "Target Support Files/Pods-multienv-multienvTests/Pods-multienv-multienvTests.release.xcconfig"; sourceTree = "<group>"; };
 		8E4D91C7F6CF5149968B9A3B /* Pods-multienv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv.debug.xcconfig"; path = "Target Support Files/Pods-multienv/Pods-multienv.debug.xcconfig"; sourceTree = "<group>"; };
 		8F78F5F7893C8BA4659959E4 /* Pods-multienv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv.release.xcconfig"; path = "Target Support Files/Pods-multienv/Pods-multienv.release.xcconfig"; sourceTree = "<group>"; };
+		A422596B6FCFFCEFAF09288D /* Pods-multienvCommon-multienv-qa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-qa.debug.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa.debug.xcconfig"; sourceTree = "<group>"; };
+		B299327567C2E149943397A3 /* Pods-multienvCommon-multienv-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-dev.debug.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev.debug.xcconfig"; sourceTree = "<group>"; };
+		BF2BE87E91B5F24BA9C31456 /* libPods-multienvCommon-multienv-dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienvCommon-multienv-dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C173B27EC08B9223440F2178 /* Pods-multienvCommon-multienv-qa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-qa.release.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa.release.xcconfig"; sourceTree = "<group>"; };
 		CDECCEBAE6DE18BF4E11EE51 /* Pods-multienv-multienv-qa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienv-qa.release.xcconfig"; path = "Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa.release.xcconfig"; sourceTree = "<group>"; };
-		CE4BA29D9DD045F8E16F0648 /* libPods-multienv-multienv-qa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-multienv-multienv-qa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C4C241A371DC34BE477410 /* Pods-multienvCommon-multienv-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienvCommon-multienv-dev.release.xcconfig"; path = "Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F42A47DE7B543BC975F23B3F /* Pods-multienv-multienv-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienv-dev.release.xcconfig"; path = "Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev.release.xcconfig"; sourceTree = "<group>"; };
 		FFE9CFF59F31A96CD71F1B2B /* Pods-multienv-multienv-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-multienv-multienv-dev.debug.xcconfig"; path = "Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-multienv.a in Frameworks */,
-				5562E525069CB25D7996445C /* libPods-multienv.a in Frameworks */,
+				0270F88FAD022078126B8D3A /* libPods-multienvCommon-multienv-prod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C46B3FBFB3DD146DBC630FB /* libPods-multienv-multienv-dev.a in Frameworks */,
+				1E51BC1F06C82BBA70807B98 /* libPods-multienvCommon-multienv-dev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				595C0EC60481F17D8C53DA13 /* libPods-multienv-multienv-qa.a in Frameworks */,
+				1BD5EAFE264336EC532C7452 /* libPods-multienvCommon-multienv-qa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-multienv.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-multienv-multienvTests.a */,
-				59995C3C84466DE122F1D2E7 /* libPods-multienv-multienv-dev.a */,
-				CE4BA29D9DD045F8E16F0648 /* libPods-multienv-multienv-qa.a */,
+				BF2BE87E91B5F24BA9C31456 /* libPods-multienvCommon-multienv-dev.a */,
+				1F7BB267EE19449B7C6EE264 /* libPods-multienvCommon-multienv-prod.a */,
+				1332AEA659971B4FEC84FEC0 /* libPods-multienvCommon-multienv-qa.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +179,12 @@
 				F42A47DE7B543BC975F23B3F /* Pods-multienv-multienv-dev.release.xcconfig */,
 				6EC7412498BEB835C137A82B /* Pods-multienv-multienv-qa.debug.xcconfig */,
 				CDECCEBAE6DE18BF4E11EE51 /* Pods-multienv-multienv-qa.release.xcconfig */,
+				B299327567C2E149943397A3 /* Pods-multienvCommon-multienv-dev.debug.xcconfig */,
+				D6C4C241A371DC34BE477410 /* Pods-multienvCommon-multienv-dev.release.xcconfig */,
+				003B47A590381F787F27C778 /* Pods-multienvCommon-multienv-prod.debug.xcconfig */,
+				5CB9E58A5539A0F4D67E9C12 /* Pods-multienvCommon-multienv-prod.release.xcconfig */,
+				A422596B6FCFFCEFAF09288D /* Pods-multienvCommon-multienv-qa.debug.xcconfig */,
+				C173B27EC08B9223440F2178 /* Pods-multienvCommon-multienv-qa.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* multienv */ = {
+		13B07F861A680F5B00A75B9A /* multienv-prod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "multienv" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "multienv-prod" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -198,7 +208,7 @@
 			);
 			dependencies = (
 			);
-			name = multienv;
+			name = "multienv-prod";
 			productName = multienv;
 			productReference = 13B07F961A680F5B00A75B9A /* multienv.app */;
 			productType = "com.apple.product-type.application";
@@ -271,7 +281,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* multienv */,
+				13B07F861A680F5B00A75B9A /* multienv-prod */,
 				431DCCFF2CD9E39C005877C0 /* multienv-dev */,
 				431DCD242CD9E3BF005877C0 /* multienv-qa */,
 			);
@@ -334,15 +344,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		026A8BADECFD8FC4123FFB93 /* [CP] Copy Pods Resources */ = {
@@ -351,15 +361,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		073DBB24078B0D587B66EDEB /* [CP] Copy Pods Resources */ = {
@@ -368,15 +378,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2FC5CF0E63CB16A118D55113 /* [CP] Check Pods Manifest.lock */ = {
@@ -394,7 +404,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-multienv-multienv-qa-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-multienvCommon-multienv-qa-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,15 +449,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-qa/Pods-multienv-multienv-qa-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-qa/Pods-multienvCommon-multienv-qa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8B7F6236405938E627FBF683 /* [CP] Check Pods Manifest.lock */ = {
@@ -465,7 +475,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-multienv-multienv-dev-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-multienvCommon-multienv-dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -487,7 +497,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-multienv-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-multienvCommon-multienv-prod-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -500,15 +510,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv-multienv-dev/Pods-multienv-multienv-dev-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-dev/Pods-multienvCommon-multienv-dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -517,15 +527,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienv/Pods-multienv-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-multienvCommon-multienv-prod/Pods-multienvCommon-multienv-prod-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -563,7 +573,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E4D91C7F6CF5149968B9A3B /* Pods-multienv.debug.xcconfig */;
+			baseConfigurationReference = 003B47A590381F787F27C778 /* Pods-multienvCommon-multienv-prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -591,7 +601,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F78F5F7893C8BA4659959E4 /* Pods-multienv.release.xcconfig */;
+			baseConfigurationReference = 5CB9E58A5539A0F4D67E9C12 /* Pods-multienvCommon-multienv-prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -617,7 +627,7 @@
 		};
 		431DCD0E2CD9E39C005877C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFE9CFF59F31A96CD71F1B2B /* Pods-multienv-multienv-dev.debug.xcconfig */;
+			baseConfigurationReference = B299327567C2E149943397A3 /* Pods-multienvCommon-multienv-dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -645,7 +655,7 @@
 		};
 		431DCD0F2CD9E39C005877C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F42A47DE7B543BC975F23B3F /* Pods-multienv-multienv-dev.release.xcconfig */;
+			baseConfigurationReference = D6C4C241A371DC34BE477410 /* Pods-multienvCommon-multienv-dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -671,7 +681,7 @@
 		};
 		431DCD332CD9E3BF005877C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC7412498BEB835C137A82B /* Pods-multienv-multienv-qa.debug.xcconfig */;
+			baseConfigurationReference = A422596B6FCFFCEFAF09288D /* Pods-multienvCommon-multienv-qa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -699,7 +709,7 @@
 		};
 		431DCD342CD9E3BF005877C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDECCEBAE6DE18BF4E11EE51 /* Pods-multienv-multienv-qa.release.xcconfig */;
+			baseConfigurationReference = C173B27EC08B9223440F2178 /* Pods-multienvCommon-multienv-qa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -878,7 +888,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "multienv" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "multienv-prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
