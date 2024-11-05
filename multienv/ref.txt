@@ -7,4 +7,5 @@
 -> Go to Product -> Schema -> Manage schema -> Delete copies and create new one with target and put proper name.
 -> Install react-native-config -> Pod install -> Will face errors -> Add all the targets to inherit dependencies.
 # Seems like this not working perfectly
+# TODO: Try this https://github.com/lugg/react-native-config/issues/591 if have time
 -> Go to Product -> Schema -> Edit schema -> Build -> Pre actions -> Add new run script action and add : cp "${PROJECT_DIR}/../.env.dev" "${PROJECT_DIR}/../.env" and make sure to select provide build settings from with correct target.
