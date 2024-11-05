@@ -5,9 +5,9 @@ apply plugin: "com.facebook.react"
 // react-native-config env flavors
 // Order matters the most
 project.ext.envConfigFiles = [
-    devDebug: ".env.dev",
-    qaDebug: ".env.qa",
-    prodDebug: ".env.prod"
+    dev: ".env.dev",
+    qa: ".env.qa",
+    prod: ".env.prod"
 ]
 
 // react-native-config
