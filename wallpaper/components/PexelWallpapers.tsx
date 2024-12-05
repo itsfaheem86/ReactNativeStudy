@@ -1,11 +1,9 @@
 import {
   View,
-  Text,
   SafeAreaView,
   ActivityIndicator,
-  FlatList,
-  Image,
   Dimensions,
+  StyleSheet,
 } from "react-native";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -24,6 +22,40 @@ const { width } = Dimensions.get("screen");
 const _imageWidth = width * 0.7;
 const _imageHight = _imageWidth * 1.76;
 const _spacing = 12;
+
+const BackdropPhoto = ({
+  item,
+  index,
+  scrollX,
+}: {
+  item: Photo;
+  index: number;
+  scrollX: SharedValue<number>;
+}) => {
+  const styleZ = useAnimatedStyle(() => {
+    return {
+      opacity: interpolate(
+        scrollX.value,
+        [index - 1, index, index + 1],
+        [0, 1, 0]
+      ),
+    };
+  });
+  // const absoluteFill = {
+  //   position: 'absolute',
+  //   left: 0,
+  //   right: 0,
+  //   top: 0,
+  //   bottom: 0,
+  // };
+  return (
+    <Animated.Image
+      src={item.src.large}
+      style={[StyleSheet.absoluteFill, styleZ]}
+      blurRadius={50}
+    />
+  );
+};
 
 const CPhoto = ({
   item,
@@ -99,6 +131,16 @@ const PexelWallpapers = () => {
       style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
     >
       {isLoading && <ActivityIndicator size={"large"} />}
+      <View style={StyleSheet.absoluteFillObject}>
+        {data?.photos.map((photo, index) => (
+          <BackdropPhoto
+            key={index}
+            item={photo}
+            index={index}
+            scrollX={scrollX}
+          />
+        ))}
+      </View>
       <Animated.FlatList
         horizontal
         data={data?.photos}
@@ -117,6 +159,7 @@ const PexelWallpapers = () => {
         decelerationRate={"fast"}
         onScroll={onScroll}
         scrollEventThrottle={1000 / 60} // 16.6ms
+        showsHorizontalScrollIndicator={false}
       />
     </SafeAreaView>
   );
