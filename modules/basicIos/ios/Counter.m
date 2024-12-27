@@ -1,0 +1,19 @@
+//
+//  Counter.m
+//  basicIos
+//
+//  Created by Abdul Saleem Mohamed Faheem on 2024-12-27.
+//
+
+#import <Foundation/Foundation.h>
+
+//This will help us export function to react native
+#import "React/RCTBridgeModule.h"
+
+// Expose counter object
+@interface RCT_EXTERN_MODULE(Counter,NSObject)
+
+// Expose increment method
+RCT_EXTERN_METHOD(increment)
+
+@end
