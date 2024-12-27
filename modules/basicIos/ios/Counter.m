@@ -14,6 +14,9 @@
 @interface RCT_EXTERN_MODULE(Counter,NSObject)
 
 // Expose increment method
-RCT_EXTERN_METHOD(increment)
+RCT_EXTERN_METHOD(increment:(RCTResponseSenderBlock)callback)
+
+// Expose decrement promise
+RCT_EXTERN_METHOD(decrement:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject)
 
 @end
